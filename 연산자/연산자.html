@@ -24,6 +24,63 @@
     //문자열 조작 메서드
     const msgObj = new String("Everything is practice");
     console.log(msgObj);
+
+    //이러한 charAt 메서드를 이용하여 문자열의 n번쨰 문자 구하기
+    console.log(msgObj.charAt(3));
+
+    //string 객체의 프로퍼티와 메서드는 문자열에서도 사용할 수 있다.
+    const msg = "Everyday study";
+    console.log(msg.length);
+
+    const a = [1,2,3];
+    const b = [1,2,3];
+    const c = a;
+
+    console.log(a == b); // a와 b의 참조 값이 다르므로 false
+    console.log(a == c); // 참초하는 값이 같으므로 true
+
+    console.log(5 == "4");
+
+    function relationship(a,b){
+        return a == b;
+    }
+        
+    console.log(relationship([2],2));
+    
+    console.log(( true || 3 || undefined ));
+        
+    const id = prompt("아이디 입력");
+    const pw = prompt("비밀번호 입력");
+
+    if((id === "cleooo" || id === "cle000" || id === "zleooo") &&  pw === "111"){
+        alert("로그인 성공")
+    }else{
+        alert("로그인 실패")
+    }
+
+    //age(나이)가 14세 이상 90세 이하에 속하는지를 확인하는 if문을 작성하세요.
+    //"이상과 이하"는 age(나이) 범위에 14나 90이 포함된다는 의미입니다.
+    const age = prompt("나이를 입력해주세요");
+    
+    if(age >= 14 && age <= 90){
+        alert("나이에 적합합니다.")
+    }else{
+        alert("해당 나이가 아닙니다.")
+    }
+
+    //age(나이)가 14세 이상 90세 이하에 속하지 않는지를 확인하는 if문을 작성하세요.
+    //답안은 NOT ! 연산자를 사용한 답안과 사용하지 않은 답안 2가지를 제출해 주세요.
+    if(age >= 14 && age <= 90){
+        alert("나이에 적합합니다.")
+    }else{
+        alert("해당 나이가 아닙니다.")
+    }
+
+    if((!(age < 14))&&(!(age >90)) ){
+        alert("나이에 적합")
+    }else{
+        alert("나이에 부적합")
+    }
 </script>    
 </body>
 </html>
