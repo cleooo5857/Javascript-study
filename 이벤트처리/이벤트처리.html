@@ -5,18 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        
+    //     window.onload = function(){
+    //         const button = document.getElementById("button");
+    //         button.onclick = function displayTime(){
+    //         const d = new Date();
+    //         console.log("현재 시각은" , d.toLocaleString()+"입니다.");
+    //     }
+    //     }
+        
+    //     const time = setTimeout(function(){
+    //         console.log(new Date);
+    //     },2000);
+        
+    //    clearTimeout(time);
+
+    //    setInterval(function(){
+    //         console.log(time)
+    //    },2000)
+
+        
+
+       window.onload = function() {
+        const starButton = document.getElementById("start");
+        const stopButton = document.getElementById("stop");
+        const display = document.getElementById("display");
+        let starTime,timer;
+        
+        starButton.onclick = start;
+           
+        function start(){
+            starButton.onclick = null;
+            stopButton.onclick = stop;
+            starTime = new Date();
+            
+            timer = setInterval(function(){
+                var now = new Date();
+                display.innerHTML = ((now -starTime)/1000).toFixed(2);
+            },10);
+       }
+       function stop(){
+           clearInterval(timer);
+           starButton.onclick = start;
+       }
+    }
+
+    </script>
 </head>
 <body>
-    <script>
-       function displayTime(){
-           const d = new Date();
-           console.log("현재 시각은" , d.toLocaleString()+"입니다.");
-       }
-       window.onload = function(){
-           const button = document.getElementById("button");
-           button.onclick = displayTime;
-       }
-    </script>
-    <input type="button" value="click" id="button">
+    <p id ="display">0.00</p>
+    <input id="start" type="button" value="start">
+    <input id="stop" type="button" value="stop">
 </body>
 </html>
