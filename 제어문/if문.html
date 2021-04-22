@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
     <script>
 
         if(num == 1){
@@ -29,8 +27,58 @@
           console.log(a.length) 
         }
     }
+
+    function isLeapYear(year){
+        if( (year % 400 === 0) || ((year % 4 || 0) && (year % 100 != 0)) ){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+    console.log(isLeapYear(1));
+    
+
+    //수축기 혈압이 120 미만이고 이완기 혈압이 80미만이면 정상 혈압
+    // 1은 아니지만 수축기 혈압이 120이상 139 미만 또는 이완기 혈압이 80이상 89미만이면 고혈압 전단계
+    // 나머지 고혈압
+
+    //수정 전
+    // const user = prompt("측정해주세요")
+    // if( (user > 80 && user < 120)){
+    //     console.log("정상혈압");
+    //     }else if((user < 139 && user > 120 )){
+    //         console.log("고혈압 전단계")
+    // }else{
+    //     console.log("고혈압");
+    // }
+
+    //수정 후
+    window.onload = function(){
+        document.getElementById("button").onclick = function(){
+
+        const hp = parseFloat(document.getElementById("highpressure").value);
+        const lp = parseFloat(document.getElementById("lowpressure").value);
+
+        const judgement = document.getElementById("judgement");
+
+        if(hp < 120 && lp < 80 ){
+            judgement.innerHTML = "당신의 혈압은 정상입니다.";
+        }else if( hp < 139 && lp < 89){
+            judgement.innerHTML = "당신의 혈압은 다소 높습니다."
+        }else{
+            judgement.innerHTML = "당신의 혈압은 고혈합 입니다."
+
+        }
+    }
+};
     </script>
-
-
+</head>
+<body>
+    
+<p>수축기 혈압 (최고 혈압) : <input type = "number" id="highpressure"></p>
+<p>이완기 혈압 (최고 혈압) : <input type = "number" id="lowpressure"></p>
+<p id="judgement">이곳에 판정 결과가 표시됩니다.</p>
+<input type = "button" id="button" value="확인하기">
 </body>
 </html>
