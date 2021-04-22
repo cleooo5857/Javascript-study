@@ -16,6 +16,27 @@
         return k;
     }
     console.log(fact(4));
+
+    //순차 검색 하는 함수
+    function linearSearch(x,a){
+        let i = 0;
+        const n = a.length;
+        while(i < n && x > a[i]) i++;
+        if(x==a[i]) return i;
+        return null;
+    }
+    const a = [2,4,7,12,15,21,34,35,46,57,70,82,86,92,99];
+    console.log(linearSearch(35,a))
+
+    // 팩토리얼 do while
+    function fact2(n){
+        let k = 1, i = n;
+        do {
+            k *= i--;
+        } while (i > 0);
+        return k;
+    }
+    console.log(fact2(5));
     </script>
 </head>
 
