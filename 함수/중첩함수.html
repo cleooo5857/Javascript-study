@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        
+        
+        const hi = {
+            name : "황순욱",
+            whoAmi : function(){
+                console.log(this.name);
+            }
+        }
+        
+        const hiyo = hi.whoAmi;
+        console.log(hiyo);
+
+        const bindhi = hiyo.bind(hi);
+        bindhi();
+
         function norm(x){
             const sum2 = sumSquare();
             return Math.sqrt(sum2);
