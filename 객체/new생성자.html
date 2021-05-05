@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Card(suit,rank){
+            this.suit = suit;
+            this.rank = rank;
+        }
+        
+        const card = new Card();
+        console.log(card);
+
+        function Cricle(center,radius){
+            this.center = center;
+            this.radius = radius;
+            Cricle.prototype.area = function(){
+                return Math.PI*this.radius*this.center;
+            }
+        }
+        var c = new Cricle({x:0, y:0},2.0);
+        var newobj = {};
+        newobj.__proto__ = Cricle.prototype;
+        
+        // var arr = new Araay('seoul','new york','ladarkh','pusan','Tsukuba');
+        // function getRandomValueFromArray(arr){
+        //     var index = Math.floor(arr.lenth*Math.random())
+        //     return arr[index];
+        // }
+        // console.log(getRandomValueFromArray(arr));
+
+
+        //표준 내장 객체의 확장
+        Array.prototype.random = function(){
+            var index = Math.floor(this.lenth*Math.random())
+        }
+        var arr = new Araay('seoul','new york','ladarkh','pusan','Tsukuba');
+        console.log(arr.random());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
